@@ -102,6 +102,9 @@ def keplerian_orbit_setup(device, t, x, y, z, xdot, ydot, zdot, learning_rate=1e
 
     Adam   = ScimbaAdam(model.parameters(), lr=learning_rate, weight_decay=1e-3)
     LBFGS = ScimbaLBFGS(model.parameters(), lr=1.0, history_size=10)
+    SSBroyden = ScimbaSSBroyden(model.parameters(), lr=1.0, history_size=10)
+    SSBFGS = ScimbaSSBFGS(model.parameters(), lr=1.0, history_size=10)
+   
 
     return model, Adam, LBFGS, t_t, x_t, y_t, z_t, xdot_t, ydot_t, zdot_t
 
