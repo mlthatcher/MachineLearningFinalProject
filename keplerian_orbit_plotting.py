@@ -40,7 +40,7 @@ def plot_result(t, data_orbit, pred_orbit, physics_data, j, loss_val):
     physics_data = physics_data.detach().cpu().numpy() if isinstance(physics_data, torch.Tensor) else physics_data
 
     fig.suptitle(f"Training step: {j}\nloss: {loss_val:.6f}", fontsize="x-large", color="k")
-    ax.set_title("Circular Orbit around Spherical Earth", fontsize="large")
+    ax.set_title("Keplerian Orbit Around Spherical Planet", fontsize="large")
     ax.set_xlabel("X", fontsize="large")
     ax.set_ylabel("Y", fontsize="large")
     ax.set_zlabel("Z", fontsize="large")
